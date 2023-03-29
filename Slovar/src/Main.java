@@ -85,6 +85,10 @@ public class Main {
                             dictionary.Search();
                             menu2();
                             break;
+                    default:
+                        System.out.println("Выбрана неверная команда. Будьте внимательней!");
+                        System.out.println("1 - открыть 1 словарь");
+                        System.out.println("2 - открыть 2 словарь");
                 }
             }
         } catch (Exception e) {
