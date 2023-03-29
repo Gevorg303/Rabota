@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class Dictionary {
+public class Dictionary implements InterfaceDict{
 
         /*для 1 словоря где ключ это цифры*/
         Map<String, String> map_number = new HashMap<>();
@@ -44,22 +44,22 @@ public class Dictionary {
         public void Removal()
         {
             if (Main.f == false) {
-                map_number.remove(Main.number);
+                map_number.remove(Main.key);
             } else {
-                map_word.remove(Main.number);
+                map_word.remove(Main.key);
             }
         }
         /*добавить*/
         public void AddNewWord()
         {
             if (Main.f == false) {
-                map_number.put(Main.wordofnumbers, Main.wordofletters);
-            } else map_word.put(Main.wordofletters, Main.wordofnumbers);
+                map_number.put(Main.wordNumbers, Main.wordLetters);
+            } else map_word.put(Main.wordLetters, Main.wordNumbers);
         }
         /*Проверка*/
         public void ChecktheWord() {
-            Boolean f1 = Main.wordofnumbers.matches("\\d{5}");
-            Boolean f2 = Main.wordofletters.matches("[a-zA-Z]{4}");
+            Boolean f1 = Main.wordNumbers.matches("\\d{5}");
+            Boolean f2 = Main.wordLetters.matches("[a-zA-Z]{4}");
             if (f1 && f2) {
                 AddNewWord();
             } else {
@@ -70,10 +70,10 @@ public class Dictionary {
         public void Search()
         {
             if (Main.f == false) {
-                WordSearch = map_number.get(Main.numerickey);
+                WordSearch = map_number.get(Main.keyWords);
                 System.out.println(WordSearch);
             } else {
-                WordSearch = map_word.get(Main.numerickey);
+                WordSearch = map_word.get(Main.keyWords);
                 System.out.println(WordSearch);
             }
         }
