@@ -18,7 +18,7 @@ public class Dictionary implements InterfaceDict{
         String WordSearch;
 
         public void Read() throws FileNotFoundException {
-            String path = "C:\\Users\\Gev\\Desktop\\test.txt";
+            String path = "test.txt";
             File file = new File(path);
             Scanner scanner = new Scanner(file);
             /*проходим по всем строкам, возврощает истину если ещё есть строка*/
