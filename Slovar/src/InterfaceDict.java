@@ -1,10 +1,10 @@
 import java.io.FileNotFoundException;
 
 public interface InterfaceDict {
-    public void Conclusion();
-    public void Removal();
-    public void AddNewWord();
-    public void ChecktheWord();
-    public void Search();
-    public void Read() throws FileNotFoundException;
+    public void conclusion();
+    public void removal();
+    public void addNewWord();
+    public void сhecktheWord();
+    public void search();
+    public void read() throws FileNotFoundException;
 }

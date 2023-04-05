@@ -17,7 +17,7 @@ public class Dictionary implements InterfaceDict {
     /*Слово которое мы ищем*/
     String WordSearch;
 
-    public void Read() throws FileNotFoundException {
+    public void read() throws FileNotFoundException {
         String path = "test.txt";
         File file = new File(path);
         Scanner scanner = new Scanner(file);
@@ -32,7 +32,7 @@ public class Dictionary implements InterfaceDict {
     }
 
     /*вывести*/
-    public void Conclusion() {
+    public void conclusion() {
         if (Main.f == false) {
             System.out.println((map_number));
         } else {
@@ -41,7 +41,7 @@ public class Dictionary implements InterfaceDict {
     }
 
     /*удалить*/
-    public void Removal() {
+    public void removal() {
         if (Main.f == false) {
             map_number.remove(Main.key);
         } else {
@@ -50,35 +50,35 @@ public class Dictionary implements InterfaceDict {
     }
 
     /*добавить*/
-    public void AddNewWord() {
+    public void addNewWord() {
         if (Main.f == false) {
             map_number.put(Main.wordNumbers, Main.wordLetters);
         } else map_word.put(Main.wordLetters, Main.wordNumbers);
     }
 
     /*Проверка*/
-    public void ChecktheWord() {
+    public void сhecktheWord() {
         Boolean f1 = Main.wordNumbers.matches("\\d{5}");
         Boolean f2 = Main.wordLetters.matches("[a-zA-Z]{4}");
-        if (!f1 && Main.f==false) {
+        if (!f1 && Main.f == false) {
             System.out.println("Ключ должен состоять из 5 цифр!");
         }
-        if (!f2 && Main.f==false) {
+        if (!f2 && Main.f == false) {
             System.out.println("Значение должно состоять из 4 латинских букв!");
         }
-        if (!f1 && Main.f==true) {
+        if (!f1 && Main.f == true) {
             System.out.println("Значение должно состоять из 5 цифр!");
         }
-        if (!f2 && Main.f==true) {
+        if (!f2 && Main.f == true) {
             System.out.println("Ключ должен состоять из 4 латинских букв!");
         }
-        if(f1 && f2){
-            AddNewWord();
+        if (f1 && f2) {
+            addNewWord();
         }
     }
 
     /*поиск*/
-    public void Search() {
+    public void search() {
         if (Main.f == false) {
             WordSearch = map_number.get(Main.keyWords);
             System.out.println(WordSearch);
